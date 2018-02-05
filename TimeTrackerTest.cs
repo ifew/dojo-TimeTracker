@@ -15,12 +15,22 @@ namespace TimeTracker
 
             Assert.True(actual);
         }
-
         
         [Fact]
         public void When_Time_Is_0801_Should_Be_True()
         {
             TimeSpan setTime = new TimeSpan(8,1,0);
+
+            TimeTracker timeTracker = new TimeTracker();
+            bool actual = timeTracker.CheckValid(setTime);
+
+            Assert.True(actual);
+        }
+        
+        [Fact]
+        public void When_Time_Is_1659_Should_Be_True()
+        {
+            TimeSpan setTime = new TimeSpan(16,59,0);
 
             TimeTracker timeTracker = new TimeTracker();
             bool actual = timeTracker.CheckValid(setTime);
