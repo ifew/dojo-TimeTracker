@@ -9,39 +9,12 @@ namespace TimeTracker
 
         [Theory]
         [InlineData(8,0,0)]
-        public void When_Time_Is_0800_Should_Be_True(int hour, int minute, int second)
+        [InlineData(8,1,0)]
+        [InlineData(16,59,0)]
+        [InlineData(17,0,0)]
+        public void When_Time_In_Period_0800_1700_Should_Be_True(int hour, int minute, int second)
         {
             TimeSpan setTime = new TimeSpan(hour, minute, second);
-
-            bool actual = timeTracker.CheckValid(setTime);
-
-            Assert.True(actual);
-        }
-        
-        [Fact]
-        public void When_Time_Is_0801_Should_Be_True()
-        {
-            TimeSpan setTime = new TimeSpan(8,1,0);
-
-            bool actual = timeTracker.CheckValid(setTime);
-
-            Assert.True(actual);
-        }
-        
-        [Fact]
-        public void When_Time_Is_1659_Should_Be_True()
-        {
-            TimeSpan setTime = new TimeSpan(16,59,0);
-
-            bool actual = timeTracker.CheckValid(setTime);
-
-            Assert.True(actual);
-        }
-
-        [Fact]
-        public void When_Time_Is_1700_Should_Be_False()
-        {
-            TimeSpan setTime = new TimeSpan(17,0,0);
 
             bool actual = timeTracker.CheckValid(setTime);
 
