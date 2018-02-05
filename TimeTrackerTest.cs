@@ -7,10 +7,11 @@ namespace TimeTracker
     {
         TimeTracker timeTracker = new TimeTracker();
 
-        [Fact]
-        public void When_Time_Is_0800_Should_Be_True()
+        [Theory]
+        [InlineData(8,0,0)]
+        public void When_Time_Is_0800_Should_Be_True(int hour, int minute, int second)
         {
-            TimeSpan setTime = new TimeSpan(8,0,0);
+            TimeSpan setTime = new TimeSpan(hour, minute, second);
 
             bool actual = timeTracker.CheckValid(setTime);
 
