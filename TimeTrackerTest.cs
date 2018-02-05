@@ -44,7 +44,7 @@ namespace TimeTracker
 
             bool actual = timeTracker.CheckValid(setTime);
 
-            Assert.True(actual);
+            Assert.False(actual);
         }
     }
 }
