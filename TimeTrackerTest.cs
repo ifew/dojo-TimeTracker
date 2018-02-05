@@ -56,5 +56,15 @@ namespace TimeTracker
 
             Assert.False(actual);
         }
+
+        [Fact]
+        public void When_Time_Is_2100_Should_Be_False()
+        {
+            TimeSpan setTime = new TimeSpan(21,0,0);
+
+            bool actual = timeTracker.CheckValid(setTime);
+
+            Assert.False(actual);
+        }
     }
 }
