@@ -40,7 +40,7 @@ namespace TimeTracker
         [Fact]
         public void When_Time_Is_1701_Should_Be_False()
         {
-            TimeSpan setTime = new TimeSpan(17,01,0);
+            TimeSpan setTime = new TimeSpan(17,1,0);
 
             bool actual = timeTracker.CheckValid(setTime);
 
@@ -61,6 +61,16 @@ namespace TimeTracker
         public void When_Time_Is_2100_Should_Be_False()
         {
             TimeSpan setTime = new TimeSpan(21,0,0);
+
+            bool actual = timeTracker.CheckValid(setTime);
+
+            Assert.False(actual);
+        }
+
+        [Fact]
+        public void When_Time_Is_0000_Should_Be_False()
+        {
+            TimeSpan setTime = new TimeSpan(0,0,0);
 
             bool actual = timeTracker.CheckValid(setTime);
 
